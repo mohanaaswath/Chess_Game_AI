@@ -585,6 +585,7 @@ const ChessGame = () => {
   if (gameMode === "menu") {
     return (
       <div
+        className="menu-wrapper"
         style={{
           minHeight: "100vh",
           background:
@@ -633,6 +634,42 @@ const ChessGame = () => {
 
           .difficulty-button:hover {
             transform: scale(1.05);
+          }
+
+          @media (max-width: 768px) {
+            body {
+              overflow-x: hidden;
+            }
+
+            .menu-container {
+              padding: 20px !important;
+              margin: 10px !important;
+              max-width: 100% !important;
+              border-radius: 16px !important;
+            }
+
+            .menu-container h1 {
+              font-size: 36px !important;
+              letter-spacing: 1px !important;
+              margin-bottom: 4px !important;
+            }
+
+            .menu-container > div:first-of-type {
+              margin-bottom: 20px !important;
+            }
+
+            .menu-container .color-button {
+              padding: 24px 16px !important;
+              min-height: auto !important;
+            }
+
+            .menu-container .color-button span:first-child {
+              font-size: 48px !important;
+            }
+
+            .menu-container .color-button span:last-child {
+              font-size: 16px !important;
+            }
           }
         `}</style>
 
@@ -904,6 +941,7 @@ const ChessGame = () => {
 
   return (
     <div
+      className="game-wrapper"
       style={{
         minHeight: "100vh",
         background:
@@ -988,6 +1026,74 @@ const ChessGame = () => {
 
         .thinking-indicator {
           animation: thinking 1.5s ease-in-out infinite;
+        }
+
+        @media (max-width: 900px) {
+          .game-container {
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 16px !important;
+            padding: 10px !important;
+          }
+
+          .game-wrapper {
+            padding: 10px !important;
+          }
+
+          .menu-wrapper {
+            padding: 10px !important;
+          }
+
+          .game-container > div {
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+
+          .game-container > div:first-child {
+            flex: 0 0 auto !important;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 12px !important;
+            width: 100% !important;
+          }
+
+          .game-container h1 {
+            font-size: 32px !important;
+            margin: 0 !important;
+          }
+
+          .status-banner {
+            text-align: center !important;
+            padding: 12px !important;
+            font-size: 16px !important;
+          }
+
+          .chess-piece {
+            font-size: 32px !important;
+          }
+
+          .chess-square {
+            min-height: 40px !important;
+            min-width: 40px !important;
+          }
+        }
+
+        @media (max-width: 500px) {
+          .game-container h1 {
+            font-size: 24px !important;
+          }
+
+          .game-container > div > div {
+            padding: 12px !important;
+          }
+
+          .chess-piece {
+            font-size: 28px !important;
+          }
+
+          .status-banner div {
+            font-size: 14px !important;
+          }
         }
       `}</style>
 
