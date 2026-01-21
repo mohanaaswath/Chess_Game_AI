@@ -1028,7 +1028,74 @@ const ChessGame = () => {
           animation: thinking 1.5s ease-in-out infinite;
         }
 
-        @media (max-width: 900px) {
+        /* Tablets - Portrait and Landscape */
+        @media only screen and (min-width: 601px) and (max-width: 900px) {
+          .game-container {
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 20px !important;
+            padding: 15px !important;
+          }
+
+          .game-wrapper {
+            padding: 15px !important;
+          }
+
+          .menu-wrapper {
+            padding: 15px !important;
+          }
+
+          .game-container > div {
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+
+          .game-container > div:first-child {
+            flex: 0 0 auto !important;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 15px !important;
+            width: 100% !important;
+          }
+
+          .game-container h1 {
+            font-size: 40px !important;
+            margin: 0 !important;
+          }
+
+          .status-banner {
+            text-align: center !important;
+            padding: 14px !important;
+            font-size: 17px !important;
+          }
+
+          .chess-board-container {
+            padding: 16px !important;
+            width: 100% !important;
+          }
+
+          .chess-board {
+            width: 100% !important;
+            max-width: 500px !important;
+            margin: 0 auto !important;
+          }
+
+          .chess-piece {
+            font-size: 36px !important;
+          }
+
+          .chess-square {
+            min-height: 50px !important;
+            min-width: 50px !important;
+          }
+        }
+
+        /* Mobile phones - Portrait mode */
+        @media only screen and (max-width: 600px) and (orientation: portrait) {
+          body {
+            background-color: #0a0a1a;
+          }
+
           .game-container {
             flex-direction: column !important;
             align-items: center !important;
@@ -1058,14 +1125,14 @@ const ChessGame = () => {
           }
 
           .game-container h1 {
-            font-size: 32px !important;
+            font-size: 28px !important;
             margin: 0 !important;
           }
 
           .status-banner {
             text-align: center !important;
             padding: 12px !important;
-            font-size: 16px !important;
+            font-size: 14px !important;
           }
 
           .chess-board-container {
@@ -1077,35 +1144,124 @@ const ChessGame = () => {
 
           .chess-board {
             width: 100% !important;
-            max-width: min(90vw, 400px) !important;
+            max-width: min(90vw, 350px) !important;
             margin: 0 auto !important;
-          }
-
-          .chess-piece {
-            font-size: 32px !important;
-          }
-
-          .chess-square {
-            min-height: 40px !important;
-            min-width: 40px !important;
-          }
-        }
-
-        @media (max-width: 500px) {
-          .game-container h1 {
-            font-size: 24px !important;
-          }
-
-          .game-container > div > div {
-            padding: 12px !important;
           }
 
           .chess-piece {
             font-size: 28px !important;
           }
 
+          .chess-square {
+            min-height: 38px !important;
+            min-width: 38px !important;
+          }
+        }
+
+        /* Mobile phones - Landscape mode (Horizontal Chess Board) */
+        @media only screen and (max-width: 900px) and (orientation: landscape) {
+          body {
+            background-color: #0a0a1a;
+          }
+
+          .game-container {
+            flex-direction: row !important;
+            align-items: flex-start !important;
+            gap: 10px !important;
+            padding: 5px !important;
+            max-height: 100vh !important;
+            overflow-y: auto !important;
+          }
+
+          .game-wrapper {
+            padding: 5px !important;
+            max-height: 100vh !important;
+          }
+
+          .menu-wrapper {
+            padding: 5px !important;
+          }
+
+          .game-container > div:first-child {
+            flex: 0 0 150px !important;
+            max-height: 100vh !important;
+            overflow-y: auto !important;
+          }
+
+          .game-container > div:first-child > div {
+            padding: 10px !important;
+            margin-bottom: 8px !important;
+          }
+
+          .game-container h1 {
+            font-size: 22px !important;
+            margin: 0 !important;
+          }
+
+          .status-banner {
+            text-align: center !important;
+            padding: 8px !important;
+            font-size: 12px !important;
+          }
+
+          .chess-board-container {
+            padding: 8px !important;
+            width: 100% !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+          }
+
+          .chess-board {
+            width: 100% !important;
+            max-width: min(70vh, 500px) !important;
+            margin: 0 auto !important;
+            transform: rotate(0deg) !important;
+          }
+
+          .chess-piece {
+            font-size: 24px !important;
+          }
+
+          .chess-square {
+            min-height: 35px !important;
+            min-width: 35px !important;
+          }
+
+          /* Hide or minimize side panels in landscape */
+          .game-container > div:last-child {
+            flex: 0 0 120px !important;
+            max-height: 100vh !important;
+            overflow-y: auto !important;
+          }
+
+          .game-container > div:last-child > div {
+            padding: 8px !important;
+            font-size: 12px !important;
+          }
+        }
+
+        /* Extra small mobile phones */
+        @media only screen and (max-width: 400px) {
+          .game-container h1 {
+            font-size: 24px !important;
+          }
+
+          .game-container > div > div {
+            padding: 10px !important;
+          }
+
+          .chess-piece {
+            font-size: 24px !important;
+          }
+
           .status-banner div {
-            font-size: 14px !important;
+            font-size: 12px !important;
+          }
+
+          .chess-square {
+            min-height: 32px !important;
+            min-width: 32px !important;
           }
         }
       `}</style>
