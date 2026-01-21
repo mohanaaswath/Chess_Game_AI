@@ -1,16 +1,81 @@
-# React + Vite
+# Chess Game With AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beautiful and interactive chess game built with React and Vite, featuring an AI opponent with adjustable difficulty levels (1-10).
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎮 Play against AI with 10 difficulty levels
+- 🎨 Beautiful gradient UI with animated effects
+- ♟️ Full chess rules implementation
+- 👑 Check, checkmate, and stalemate detection
+- 📊 Move history and captured pieces tracking
+- 🎯 Valid move highlighting
+- 🎭 Choose to play as White or Black
 
-## React Compiler
+## Difficulty Levels
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Easy (1-5)**: Great for beginners, AI makes random moves frequently
+- **Average (6-10)**: More challenging gameplay with strategic AI moves
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 19
+- Vite
+- Lucide React (for icons)
+- CSS-in-JS styling
+
+## Getting Started
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+### Build
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## How to Play
+
+1. Choose your color (White or Black)
+2. Select difficulty level (1-10)
+3. Click on a piece to see valid moves
+4. Click on a highlighted square to move
+5. Enjoy the game!
+
+## Project Structure
+
+```
+Chess-Game/
+├── Components/
+│   └── chess-game-ai.jsx    # Main chess game component
+├── src/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── assets/
+├── public/
+└── package.json
+```
+
+## AI Strategy
+
+The AI uses the minimax algorithm with alpha-beta pruning to evaluate moves. The search depth increases with difficulty level, making higher levels more challenging.
+
+## License
+
+MIT
