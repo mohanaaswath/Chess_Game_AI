@@ -1068,6 +1068,19 @@ const ChessGame = () => {
             font-size: 16px !important;
           }
 
+          .chess-board-container {
+            padding: 12px !important;
+            width: 100% !important;
+            max-width: 100vw !important;
+            overflow-x: auto !important;
+          }
+
+          .chess-board {
+            width: 100% !important;
+            max-width: min(90vw, 400px) !important;
+            margin: 0 auto !important;
+          }
+
           .chess-piece {
             font-size: 32px !important;
           }
@@ -1447,6 +1460,7 @@ const ChessGame = () => {
 
           {/* Chess Board */}
           <div
+            className="chess-board-container"
             style={{
               background: "rgba(0, 0, 0, 0.3)",
               backdropFilter: "blur(10px)",
@@ -1458,6 +1472,7 @@ const ChessGame = () => {
             }}
           >
             <div
+              className="chess-board"
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(8, 1fr)",
