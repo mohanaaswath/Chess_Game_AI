@@ -1216,11 +1216,13 @@ const ChessGame = () => {
             width: 100% !important;
             max-width: min(70vh, 500px) !important;
             margin: 0 auto !important;
-            transform: rotate(0deg) !important;
+            transform: rotate(90deg) !important;
+            transform-origin: center center !important;
           }
 
           .chess-piece {
             font-size: 24px !important;
+            --piece-rotation: -90deg;
           }
 
           .chess-square {
@@ -1700,7 +1702,8 @@ const ChessGame = () => {
                             filter: isSelected
                               ? "drop-shadow(0 4px 8px rgba(0,0,0,0.5))"
                               : "drop-shadow(0 2px 4px rgba(0,0,0,0.3))",
-                            transform: isSelected ? "scale(1.1)" : "scale(1)",
+                            transform: `${isSelected ? "rotate(var(--piece-rotation, 0deg)) scale(1.1)" : "rotate(var(--piece-rotation, 0deg)) scale(1)"}`,
+                            display: "inline-block",
                           }}
                         >
                           {piece}
